@@ -20,19 +20,12 @@ class TaskController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(StoreTaskRequest $request)
     {
-        //
+        $task = Task::create($request->validated());
+        return TaskResource::make($task);
     }
 
     /**
@@ -45,19 +38,12 @@ class TaskController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Task $task)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      */
     public function update(UpdateTaskRequest $request, Task $task)
     {
-        //
+        $task -> update($request->validated());
+        return TaskResource::make($task);
     }
 
     /**
@@ -65,6 +51,8 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
-        //
+        $task->delete();
+
+        return response() -> noContent();
     }
 }
