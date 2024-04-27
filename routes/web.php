@@ -25,4 +25,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/shopping-cart', function () {
+        return view('test');
+    })->name('shopping-cart');
 });

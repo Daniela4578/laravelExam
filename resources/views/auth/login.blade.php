@@ -1,3 +1,4 @@
+<!-- TODO: Тук ти е логин-а, важното е тези <x-input> да си останат така, само class-овете могат да се променат -->
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
@@ -46,3 +47,6 @@
         </form>
     </x-authentication-card>
 </x-guest-layout>
+<style>
+
+</style>
